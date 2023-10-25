@@ -1,5 +1,3 @@
-
-
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { ExternalLibraryService } from '../util';
 
@@ -8,7 +6,7 @@ declare let document: any;
 @Component({
   selector: 'app-razorpay',
   templateUrl: './razorpay.component.html',
-  styleUrls: ['./razorpay.component.css']
+  styleUrls: ['./razorpay.component.scss']
 })
 export class RazorpayComponent {
 

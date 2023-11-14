@@ -1,34 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
 
-  divone:boolean = true;
-  divtwo:boolean = false;
-  divthree:boolean = false;
+  divone: boolean = true;
+  divtwo: boolean = false;
+  divthree: boolean = false;
 
   faqone = false;
   faqtwo = false;
   faqthree = false;
   faqfour = false;
+  days: any;
+  hours: any;
+  minutes: any;
+  seconds: any;
+  constructor() { }
 
-  constructor(){}
+  ngAfterViewInit() {
+    setInterval(() => {
+      this.countDown();
+    }, 1000);
+  }
 
   showslider(divname: string) {
     console.log("div name : ", divname);
-    if(divname === "one") {
+    if (divname === "one") {
       this.divone = true;
       this.divtwo = false;
       this.divthree = false;
-    } else if(divname === "two") {
+    } else if (divname === "two") {
       this.divone = false;
       this.divtwo = true;
       this.divthree = false;
-    } else if(divname === "three") {
+    } else if (divname === "three") {
       this.divone = false;
       this.divtwo = false;
       this.divthree = true;
@@ -37,26 +46,42 @@ export class HomeComponent {
 
   faqclicked(faqname: string) {
     console.log("div name : ", faqname);
-    if(faqname === "one") {
+    if (faqname === "one") {
       this.faqone = true;
       this.faqtwo = false;
       this.faqthree = false;
       this.faqfour = false;
-    } else if(faqname === "two") {
+    } else if (faqname === "two") {
       this.faqtwo = true;
       this.faqone = false;
       this.faqthree = false;
       this.faqfour = false;
-    } else if(faqname === "three") {
+    } else if (faqname === "three") {
       this.faqthree = true;
       this.faqtwo = false;
       this.faqone = false;
       this.faqfour = false;
-    } else if(faqname === "four") {
+    } else if (faqname === "four") {
       this.faqfour = true;
       this.faqtwo = false;
       this.faqthree = false;
       this.faqone = false;
-    } 
+    }
+  }
+
+  countDown() {
+    let targetDate = new Date(2023, 11, 31);
+    let targetTime = targetDate.getTime();
+    let date = new Date();
+    let now = date.getTime();
+    let difference = targetTime - now;
+    difference = difference / (1000 * 60 * 60 * 24);
+    this.days = Math.floor(difference);
+    this.hours = this.isValidTime((23 - date.getHours())) ;
+    this.minutes = this.isValidTime(60 - date.getMinutes());
+    this.seconds = this.isValidTime(60 - date.getSeconds());
+  }
+  isValidTime(time:number){
+    return time > 0 ? time : 0;
   }
 }

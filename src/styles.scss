@@ -11,3 +11,17 @@
         width:200px;
     }
 }
+.header-area {
+    box-shadow: 0 0 10px #1a1a1a26;
+}
+
+.div-menu-home {
+    padding-left: 0px !important;
+}
+
+#back-top {
+    transition: 0.4s;
+    &:hover {
+        background: #E2225E;
+    }
+}

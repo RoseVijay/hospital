@@ -1,0 +1,16 @@
+.btn-icons {
+    background-color: unset;
+    border: 0px;
+    color: #57267A;
+    font-size: 16px;
+    padding: 0px 6px;
+    margin-left: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+  
+    &:hover,
+    &:focus {
+      color: #E2225E;
+      transform: scale(1.1);
+    }
+  }

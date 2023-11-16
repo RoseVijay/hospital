@@ -1,0 +1,46 @@
+.div-about {
+    width: 100%;
+    padding: 50px;
+    background-color: #f8f8f8;
+    h2 {
+        color: #023e8a;
+        font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+    p {
+        color: #3a3a3a;
+        font-size: 20px;
+        margin-bottom: 30px;
+        text-align: justify;
+    }
+
+    .div-add-banner {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        background-image: url(/assets/img/background/add.png);
+        height:100%;
+    }
+    ul {
+        li {
+            color: #3a3a3a;
+            font-size: 20px;
+            margin-bottom: 20px;
+            transition: 0.5s;
+            i {
+                margin-right: 20px;
+                color: #57267A;
+            }
+            &:hover {
+                transform: scale(1,1.2);
+                color: #E2225E;
+            }
+        }
+    }
+}
+
+.mt-5 {
+    margin-top: 80px !important;
+}

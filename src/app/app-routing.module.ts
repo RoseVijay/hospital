@@ -3,6 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import {RazorpayComponent} from './razorpay/razorpay.component'
 import {HomeComponent} from './home/home.component'
 import { ParvathyhomecareComponent } from './parvathyhomecare/parvathyhomecare.component';
+import { LeadershipComponent } from './leadership/leadership.component';
+import { HomedoctorconsultationComponent } from './homedoctorconsultation/homedoctorconsultation.component';
+import { HomenursingComponent } from './homenursing/homenursing.component';
+import { HomephysiotherapyComponent } from './homephysiotherapy/homephysiotherapy.component';
+import { HomehealthcheckupsComponent } from './homehealthcheckups/homehealthcheckups.component';
+import { LabtestathomeComponent } from './labtestathome/labtestathome.component';
+import { MedicalequipmentrentalComponent } from './medicalequipmentrental/medicalequipmentrental.component';
+import { CaregiverforelderlyComponent } from './caregiverforelderly/caregiverforelderly.component';
+import { HomexrayComponent } from './homexray/homexray.component';
 
 const routes: Routes = [
   {
@@ -16,6 +25,42 @@ const routes: Routes = [
   { 
     path: 'parvathyhomecare',
     component: ParvathyhomecareComponent
+  },
+  {
+    path: 'leadership',
+    component: LeadershipComponent
+  },
+  {
+    path: 'homedoctorconsultation',
+    component: HomedoctorconsultationComponent
+  },
+  {
+    path: 'homenursing',
+    component: HomenursingComponent
+  },
+  {
+    path: 'homephysiotherapy',
+    component: HomephysiotherapyComponent
+  },
+  {
+    path: 'homehealthcheckups',
+    component: HomehealthcheckupsComponent
+  },
+  {
+    path: 'labtestathome',
+    component: LabtestathomeComponent
+  },
+  {
+    path: 'medicalequipmentrental',
+    component: MedicalequipmentrentalComponent
+  },
+  {
+    path: 'caregiverforelderly',
+    component: CaregiverforelderlyComponent
+  },
+  {
+    path: 'homexray',
+    component: HomexrayComponent
   }
 ];
 

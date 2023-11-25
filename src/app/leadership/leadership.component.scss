@@ -1,0 +1,51 @@
+.div-about {
+    width: 100%;
+    padding: 50px;
+    background-color: #f8f8f8;
+    .div-team {
+        padding: 50px;
+        display:flex;
+        // text-align: center;
+        justify-content: center;
+        h2 {
+            color: #57267A;
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        p {
+            color: #3a3a3a;
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+    }
+    .div-team-box {
+        padding: 20px;
+        .div-team-card {
+            background-color: #57267A;
+            border-radius: 20px;
+            text-align: center;
+            width:100%;
+            color: #f8f8f8;
+            padding: 30px 0px;
+            img {
+                width:130px;
+                height: 130px;
+                border-radius: 50%;
+                
+            }
+            .div-name {
+                font-size: 20px;
+                margin-top: 20px;
+            }
+            .div-pos {
+                margin-top: 10px;
+                font-size: 16px;
+            }            
+        }
+        &.div-cen {
+            margin-top: 50%;
+        }
+    }
+}

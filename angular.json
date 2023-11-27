@@ -130,6 +130,7 @@
             "styles": [
               "src/styles.scss",
               "src/assets/scss/style.scss",
+              "src/assets/scss/_style.scss",
               "src/assets/scss/_variables.scss",
               "src/assets/scss/_color.scss",
               "src/assets/scss/_mixins.scss",

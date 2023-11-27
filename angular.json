@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "scheduler": {
+    "parvathyhomecare": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,32 +17,20 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/scheduler",
+            "outputPath": "dist/parvathyhomecare",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/assets/css/bootstrap.min.css",
-              "src/assets/css/owl.carousel.min.css",
-              "src/assets/css/slicknav.css",
-              "src/assets/css/flaticon.css",
-              "src/assets/css/gijgo.css",
-              "src/assets/css/animate.min.css",
-              "src/assets/css/animated-headline.css",
-              "src/assets/css/magnific-popup.css",
-              "src/assets/css/fontawesome-all.min.css",
-              "src/assets/css/themify-icons.css",
-              "src/assets/css/slick.css",
-              "src/assets/css/nice-select.css",
-              "src/assets/css/style.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "src/assets/js/vendor/modernizr-3.5.0.min.js",
@@ -77,8 +69,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "60kb",
-                  "maximumError": "100kb"
+                  "maximumWarning": "150kb",
+                  "maximumError": "150kb"
                 }
               ],
               "outputHashing": "all"
@@ -98,10 +90,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "scheduler:build:production"
+              "browserTarget": "parvathyhomecare:build:production"
             },
             "development": {
-              "browserTarget": "scheduler:build:development"
+              "browserTarget": "parvathyhomecare:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -109,7 +101,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "scheduler:build"
+            "browserTarget": "parvathyhomecare:build"
           }
         },
         "test": {
@@ -120,12 +112,33 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/scss/style.scss",
+              "src/assets/scss/_variables.scss",
+              "src/assets/scss/_color.scss",
+              "src/assets/scss/_mixins.scss",
+              "src/assets/scss/_overlay.scss",
+              "src/assets/scss/_common.scss",
+              "src/assets/scss/_headerMenu.scss",
+              "src/assets/scss/_h1-hero.scss",
+              "src/assets/scss/_about.scss",
+              "src/assets/scss/_testimonial.scss",
+              "src/assets/scss/_video-area.scss",
+              "src/assets/scss/_services_section.scss",
+              "src/assets/scss/_wantTowork.scss",
+              "src/assets/scss/_team.scss",
+              "src/assets/scss/_footer.scss",
+              "src/assets/scss/_blog_page.scss",
+              "src/assets/scss/_contact.scss",
+              "src/assets/scss/_bradcam.scss",
+              "src/assets/scss/_extend.scss",
+              "src/assets/scss/_elements.scss"
             ],
             "scripts": []
           }
@@ -134,6 +147,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "9841c3f0-6c9d-43bc-8066-dedbe525a7a1"
   }
 }

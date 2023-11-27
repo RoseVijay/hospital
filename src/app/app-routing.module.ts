@@ -12,6 +12,7 @@ import { LabtestathomeComponent } from './labtestathome/labtestathome.component'
 import { MedicalequipmentrentalComponent } from './medicalequipmentrental/medicalequipmentrental.component';
 import { CaregiverforelderlyComponent } from './caregiverforelderly/caregiverforelderly.component';
 import { HomexrayComponent } from './homexray/homexray.component';
+import { ServicedetailComponent } from './servicedetail/servicedetail.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path: 'homexray',
     component: HomexrayComponent
+  },
+  {
+    path: 'servicedetails',
+    component: ServicedetailComponent
   }
 ];
 

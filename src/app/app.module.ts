@@ -17,6 +17,7 @@ import { LabtestathomeComponent } from './labtestathome/labtestathome.component'
 import { MedicalequipmentrentalComponent } from './medicalequipmentrental/medicalequipmentrental.component';
 import { CaregiverforelderlyComponent } from './caregiverforelderly/caregiverforelderly.component';
 import { HomexrayComponent } from './homexray/homexray.component';
+import { ServicedetailComponent } from './servicedetail/servicedetail.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HomexrayComponent } from './homexray/homexray.component';
     LabtestathomeComponent,
     MedicalequipmentrentalComponent,
     CaregiverforelderlyComponent,
-    HomexrayComponent
+    HomexrayComponent,
+    ServicedetailComponent
   ],
   imports: [
     BrowserModule,

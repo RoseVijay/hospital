@@ -1,10 +1,11 @@
 <div class="div-home">
     <div class="row">
+        <div class="col-md-1"></div>
         <div class="col-md-4">
             <div class="div-service">
                 <div class="div-service-sub">
-                    <h2>Service 1</h2>
-                    <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</p>
+                    <h2>Diabetic Basic Screening (Basic)</h2>
+                    <p>Also known as Diabetes Screening Test, Diabetes Basic Panel Test.</p>
                     <div class="div-timer">
                         <p>Get reports</p>
                         <span>Within 8 Hours</span>
@@ -16,17 +17,306 @@
                         <span>BEST VALUE</span>
                     </div>
                     <div class="div-offer-amt">
-                        <p>MRP <span class="span-strike">₹527</span> <span class="span-offer">25% off</span></p>
+                        <p>MRP <span class="span-strike">₹999</span> <span class="span-offer">45% off</span></p>
                     </div>
                     <div class="div-amt">
-                        <span>₹375</span>
+                        <span>₹555</span>
                     </div>
                 </div>
                 <button class="btn btn-add-to-cart">Add To Cart</button>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6">
+            <div class="div-service-details">
+                <h2>Total Tests Included (18)</h2>
+                <div class="div-service-card">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h3>Diabetic Basic Screening (Basic)</h3>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <i class="fa fa-angle-down" (click)="showtextlist()" [ngClass]="{'fa-rotate-180' : servicelist}" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-12">
+                            <p>18 Tests Included</p>
+                        </div>
+                        <div class="div-tests col-md-12 mt-4" *ngIf="servicelist">
+                            <ul>
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Glucose Fasting</span></li>
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>HbA1c</span></li>
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Complete Urine Examination (12 Tests Included)</span></li>
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Physical Examination</span></li>
+                                <li>
+                                    <ul>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Colour</span></li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Transparency</span></li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>PH</span></li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Sp. Gravity</span></li>
+                                    </ul>
+                                </li>
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Biochemical Examination</span></li>
+                                <li>
+                                    <ul>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Urine Protein</span></li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Glucose</span></li>
+                                        
+                                    </ul>
+                                </li>
+                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Centrifuged Sediment Wet Mount and Microscopy</span></li>
+                                <li>
+                                    <ul>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Pus Cells</span></li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Epithelial Cells (Optional)</span></li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>RBC</span></li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Casts</span></li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Crystals</span></li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Others (Optional)</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="div-service-card">                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>About </h3>
+                        </div>
+                    </div>
+                    <div class="row div-about-test">
+                        <div class="col-md-4">
+                            <p>Sample</p>
+                            <span>BLOOD, URINE</span>
+                        </div>
+                        <div class="col-md-4">
+                            <p>Gender</p>
+                            <span>Both</span>
+                        </div>
+                        <div class="col-md-4">
+                            <p>Age group</p>
+                            <span>All age group</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="div-about-less">
+                                <p>Curated by Dr. Vijaya, Parvathy Homecare introduces the Basic Diabetes Screening - made to include vital tests such as Glucose Fasting, HbA1c, and a comprehensive Complete Urine Examination comprising 12 essential tests. This panel not only monitors diabetes and its effects but also accurately identifies the risk of developing other serious illnesses associated with diabetes. It is recommended for individuals who are prediabetic, diabetic, or have a family history of diabetes.</p>
+                                <button (click)="readmore()" class="btn btn-more" type="button" *ngIf="!aboutmoreless">Read More</button>
+                            </div>
+                            <div class="div-about-more" *ngIf="aboutmoreless">
+                                <p>Diabetes is a chronic condition where the body fails to produce sufficient insulin, leading to an accumulation of excess blood sugar. Over time, this disorder can result in vision loss, kidney failure, or heart disease.</p>
+                                <p>Key signs indicating the need for a blood sugar test include frequent or abnormal urination, increased thirst, extreme fatigue, blurred vision, unexpected weight loss, and numbness in the hands or feet. A blood sugar test, also known as a Diabetes Panel - Basic, is essential for an accurate diagnosis. This test typically measures blood glucose levels, providing insights into the severity of diabetes.</p>
+                                <p>The diabetes test package includes crucial categories of tests:</p>
+                                <div class="div-about-list">
+                                    <p><span>Glucose, Fasting:</span> Measures fasting glucose levels, providing information on short-term glycemic control.</p>
+                                    <p><span>HbA1C, Glycated Hemoglobin:</span> Reports average blood glucose levels over the past 2 to 3 months.</p>
+                                    <p><span>Complete Urine Examination (12 Tests):</span></p>
+                                    <ul>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Physical Examination:</span></li>
+                                        <li>
+                                            <ul>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Colour</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Transparency</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>PH</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Sp. Gravity</span></li>
+                                            </ul>
+                                        </li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Biochemical Examination</span></li>
+                                        <li>
+                                            <ul>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Urine Protein</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Glucose</span></li>
+                                                
+                                            </ul>
+                                        </li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Centrifuged Sediment Wet Mount and Microscopy</span></li>
+                                        <li>
+                                            <ul>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Pus Cells</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Epithelial Cells (Optional)</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>RBC</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Casts</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Crystals</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Others (Optional)</span></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <p>Early diagnosis through this comprehensive diabetic profile test enables timely intervention, facilitating necessary diet and lifestyle changes. Experienced physicians can recommend suitable medications based on the test results, ensuring effective management of the condition. Parvathy Homecare offers a complete diabetic health checkup with these essential tests at reasonable rates. Results are delivered within Eight hours, allowing prompt initiation of treatment. Follow fasting instructions carefully for accurate blood glucose results, and trust Parvathy Homecare for medically sound advice on diabetic testing to prevent complications.</p>
+                                    <button (click)="readless()" class="btn btn-less" type="button">Read Less</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-top-booked">
+                    <h2>Top Booked Tests</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="div-service-card">
+                                <h3>Diabetic Screening (Advanced)</h3>
+                                <div class="div-line"></div>
+                                <div class="div-offer-amt">
+                                    <p>MRP <span class="span-strike">₹1999</span> <span class="span-offer">25% off</span></p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="div-amt">
+                                            <span>₹1222</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <button class="btn btn-add" type="button">Add</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="div-service-card">
+                                <h3>Full Body Checkup (Basic)</h3>
+                                <div class="div-line"></div>
+                                <div class="div-offer-amt">
+                                    <p>MRP <span class="span-strike">₹1999</span> <span class="span-offer">25% off</span></p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="div-amt">
+                                            <span>₹1380</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <button class="btn btn-add" type="button">Add</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="div-service-card">
+                                <h3>Full Body Checkup (Advanced)</h3>
+                                <div class="div-line"></div>
+                                <div class="div-offer-amt">
+                                    <p>MRP <span class="span-strike">₹1999</span> <span class="span-offer">25% off</span></p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="div-amt">
+                                            <span>₹4950</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <button class="btn btn-add" type="button">Add</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="div-service-card">
+                                <h3>Full Body Checkup (Executive)</h3>
+                                <div class="div-line"></div>
+                                <div class="div-offer-amt">
+                                    <p>MRP <span class="span-strike">₹1999</span> <span class="span-offer">25% off</span></p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="div-amt">
+                                            <span>₹5550</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <button class="btn btn-add" type="button">Add</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-faq">
+                    <h2>Frequently Asked Questions (FAQ)</h2>
+                    <div class="div-service-card">
+                        <div class="div-faq-content">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <span>What is the purpose of the Glucose Fasting test in the Diabetes Panel - Basic?</span>
+                                </div>
+                                <div class="col-md-1">
+                                    <i class="fa fa-angle-down" (click)="showfaqans('one')" [ngClass]="{'fa-rotate-180' : faqone}" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-12" *ngIf="faqone">
+                                    <p>The Glucose Fasting test measures blood glucose levels after an overnight fast. It provides crucial information on short-term glycemic control, aiding in the assessment of diabetes.</p>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="div-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div-faq-content">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <span>Why is HbA1c included in the Diabetes Panel - Basic?</span>
+                                </div>
+                                <div class="col-md-1">
+                                    <i class="fa fa-angle-down" (click)="showfaqans('two')" [ngClass]="{'fa-rotate-180' : faqtwo}" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-12" *ngIf="faqtwo">
+                                    <p> HbA1c, or Glycated Hemoglobin, is a key test that reports the average blood glucose levels over the past 2 to 3 months. It provides insights into long-term glycemic control, helping in the diagnosis and management of diabetes.</p>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="div-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div-faq-content">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <span>What does the Complete Urine Examination (12 Tests) encompass?</span>
+                                </div>
+                                <div class="col-md-1">
+                                    <i class="fa fa-angle-down" (click)="showfaqans('three')" [ngClass]="{'fa-rotate-180' : faqthree}" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-12" *ngIf="faqthree">
+                                    <p> The Complete Urine Examination includes a comprehensive assessment, covering physical and biochemical examinations, as well as centrifuged sediment wet mount and microscopy. It evaluates factors such as color, transparency, pH, specific gravity, urine protein, glucose, and microscopic elements like pus cells, epithelial cells, RBCs, casts, crystals, and others.</p>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="div-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div-faq-content">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <span>How does the Physical Examination of urine contribute to the diagnosis?</span>
+                                </div>
+                                <div class="col-md-1">
+                                    <i class="fa fa-angle-down" (click)="showfaqans('four')" [ngClass]="{'fa-rotate-180' : faqfour}" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-12" *ngIf="faqfour">
+                                    <p> The physical examination assesses color, transparency, pH, and specific gravity of urine. Changes in these parameters can indicate various health conditions, including those related to diabetes.</p>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="div-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div-faq-content">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <span> What information does the Biochemical Examination (Urine Protein, Glucose) provide?</span>
+                                </div>
+                                <div class="col-md-1">
+                                    <i class="fa fa-angle-down" (click)="showfaqans('five')" [ngClass]="{'fa-rotate-180' : faqfive}" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-12" *ngIf="faqfive">
+                                    <p> The Biochemical Examination assesses urine protein and glucose levels. Elevated levels may indicate kidney dysfunction and uncontrolled diabetes, respectively.</p>
+                                </div>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

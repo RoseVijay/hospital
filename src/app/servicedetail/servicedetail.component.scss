@@ -98,5 +98,168 @@
                 letter-spacing: 1px;
             }
         }
-    }    
+    }
+    .div-service-details {
+        padding-left: 45px;
+        h2 {
+            color: #57267A;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .div-service-card {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 12px #d9d9d7;
+            background-color: #fff;
+            margin-bottom: 30px;
+            h3 {
+                text-transform: uppercase;
+                font-size: 20px;
+                color: #E2225E;
+                margin-bottom: 0px;
+            }
+            i {
+                color: #E2225E;
+                font-size: 16px;
+                cursor: pointer;
+                transition: .4s;
+                &:hover {
+                    //transform: rotateY(360deg);
+                }
+            }
+            p {
+                font-size: 14px;
+                color: #3a3a3a;
+                margin-bottom: 0px;
+                font-style: normal;
+            }
+            .div-tests {
+                i {
+                    margin-right: 10px;                    
+                }
+                span {
+                    font-size: 16px;
+                }
+                li {
+                    ul {
+                        margin-left: 18px;
+                    }
+                }
+            }
+            .div-about-test {
+                margin-top: 15px;
+                p {
+                    font-size: 12px;
+                    color: #57267A;
+                    line-height: normal;
+                }
+                span {
+                    font-size: 14px;
+                    color: #57267A;
+                    font-weight: 500;
+                }
+            }
+            .div-about-less {                
+                p {
+                    text-align: justify;
+                    margin-top: 20px;
+                }
+                button {
+                    background-color: unset;
+                    padding: 10px 0px;
+                    border: 0px;
+                    color: #57267A;
+                    font-size: 14px;
+                    border-radius: 0px;
+                    float:right;
+                }
+            }
+            .div-about-more {
+                p {
+                    text-align: justify;
+                    margin-top: 20px;
+                }
+                button {
+                    background-color: unset;
+                    padding: 10px 0px;
+                    border: 0px;
+                    color: #57267A;
+                    font-size: 14px;
+                    border-radius: 0px;
+                    float:right;
+                }
+                ul {
+                    li {
+                        font-size: 16px;
+                        i {
+                            margin-right: 10px;
+                        }
+                        ul {
+                            margin-left: 18px;
+                        }
+                    }
+                }
+            }            
+        }
+        .div-top-booked {
+            h3 {
+                text-transform: unset;
+                font-size: 18px;
+                height: 45px;
+            }            
+            .div-offer-amt {
+                margin-top: 20px;
+                p {
+                    font-style: normal;
+                    color: #3a3a3a78;
+                    margin-bottom: 0px;
+                    .span-strike {
+                        text-decoration: line-through;
+                        margin-right: 10px;
+                    }
+                    .span-offer {
+                        font-size: 12px;
+                        font-weight: 500;
+                        color: #E2225E;
+                        // color:#fff;
+                        // background-color: #E2225E;
+                        // padding: 2px 10px;
+                        // border-radius: 50px;
+                    }
+                }
+            }
+            .div-amt {
+                span {
+                    color: #57267A;
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+            }
+            .btn-add {
+                padding: 12px 16px;
+                border-radius: 6px;
+            }
+            .div-line {
+                border-top: 1px solid #d9d9d7;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+        .div-faq {
+            span {
+                font-size: 15px;
+                font-weight: 500;
+                color:#57267A;
+            }
+            p {
+                margin-top: 10px;
+            }
+            .div-line {
+                border-top: 1px solid #d9d9d7;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    }
 }

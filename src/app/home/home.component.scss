@@ -391,7 +391,7 @@
       h2 {
         font-size: 32px;
         font-weight: 600;
-        color: #fff;
+        color: #E2225E;
         margin-bottom: 10px;
         // text-transform: uppercase;
         text-transform: capitalize;
@@ -400,7 +400,7 @@
       p {
         font-size: 26px;
         font-weight: 300;
-        color: #fff;
+        color: #E2225E;
         margin-bottom: 20px;
 
         span {
@@ -417,31 +417,29 @@
         border: 0px;
         font-weight: 600;
         cursor: pointer;
-        &.one {
-          background-color: #023e8a;
-          color: #fff;
-
+        background-color: #fff;
+        &.one {          
+          color:#E2225E;
           &:hover {
-            background-color: #4ac1c4;
+            background-color: #E2225E;
+            color:#fff;
           }
         }
 
-        &.two {
-          background-color: #fff;
-          color: #023e8a;
+        &.two {          
+          color:#57267A;
 
           &:hover {
-            background-color: #4ac1c4;
+            background-color: #57267A;
+            color: #fff;
           }
         }
 
         &.three {
-          background-color: #fff;
-          color: #4ac1c4;
-
+          color:#E2225E;
           &:hover {
-            background-color: #4ac1c4;
-            color: #fff;
+            background-color: #E2225E;
+            color:#fff;
           }
         }
       }
@@ -450,7 +448,7 @@
 
         h2,
         p {
-          color: #023e8a;
+          color:#57267A;
         }
       }
 
@@ -474,7 +472,7 @@
     display: flex;
     .div-img {
       border-radius: 50px;
-      background-color: #4ac1c4;
+      background-color:#57267A;
       margin-right: 25px;
       width:70px;
       height:70px;
@@ -488,7 +486,7 @@
         width: 100%;
       }
       &:hover {
-        background-color: #023e8a;
+        background-color:#E2225E;
       }
     }
     .div-content {      
@@ -511,7 +509,7 @@
 .div-arrivals {
   padding:70px 40px;
   h2 {
-    color: #023e8a;
+    color:#57267A;
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 30px;
@@ -529,8 +527,8 @@
     cursor: pointer;
     background-color: #fff;
     &:hover, &.active {
-      color: #4ac1c4;
-      border-bottom: 3px solid #023e8a;
+      color: #E2225E;
+      border-bottom: 3px solid #E2225E;
     }
   }  
 }
@@ -603,24 +601,24 @@
   background-position: center center;
   background-size: cover;
   width: 100%;
-  background-image: url(/assets/img/background/weekend.png);
+  background-image: url(/assets/img/background/rental.png);
   display:flex;
   align-items: center;
   padding: 40px;
-  color: #fff;
+  color: #E2225E;
   .div-weekend-content {
     width:60%;
     padding: 20px 30px;
     h2 {
       font-size: 40px;
       font-weight: 600;
-      color: #fff;
+      color: #E2225E;
       margin-bottom: 20px;
     }
     h3 {
       font-size: 30px;
       font-weight: 500;
-      color: #fff;
+      color: #E2225E;
       margin-bottom: 20px;
     }
     p {
@@ -629,19 +627,32 @@
     }
     
     button {
+      background: #57267A;
+      font-family: 'Outfit',sans-serif;
+      text-transform: uppercase;
       padding: 25px 30px;
-      border-radius: 0px;
-      background-color: #fff;
-      color: #57267A;
-      transition: 0.4s;
-      border: 0px;
-      font-size: 16px;
-
+      border-radius: 0;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;    
+      border: 0px solid #fff;  
+      -moz-user-select: none;
+      letter-spacing: normal;
+      line-height: 0;
+      margin-bottom: 0;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.4s linear;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      margin: 0;
       &:hover {
-        background-color: #4ac1c4;
-        color: #fff;
-      }
-    }    
+          background: #E2225E;
+      }      
+    }
   }
 }
 
@@ -656,7 +667,7 @@
   .div-add-content {
     width:100%;
     h2{
-      color: #023e8a;
+      color:#57267A;
       font-size: 40px;
       font-weight: 600;
       margin-bottom: 20px;
@@ -667,23 +678,36 @@
       margin-bottom: 30px;
     }
     button {
+      background: #57267A;
+      font-family: 'Outfit',sans-serif;
+      text-transform: uppercase;
       padding: 25px 30px;
-      border-radius: 0px;
-      background-color: #57267A;
+      border-radius: 0;
       color: #fff;
-      transition: 0.4s;
-      border: 0px;
-      font-size: 16px;     
-
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;    
+      border: 0px solid #fff;  
+      -moz-user-select: none;
+      letter-spacing: normal;
+      line-height: 0;
+      margin-bottom: 0;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.4s linear;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      margin: 0;
       &:hover {
-        background-color: #57267A;
-        color: #fff;
+          background: #57267A;
       }
     }
     .div-add-count {
       margin-top: 30px;
       p {
-        color: #023e8a;
+        color:#57267A;
         font-size: 30px;
         font-weight: 700;
         margin-bottom: 10px;
@@ -700,7 +724,7 @@
     background-position: center center;
     background-size: cover;
     width: 100%;
-    background-image: url(/assets/img/background/add.png);
+    background-image: url(/assets/img/background/doctors-nurse-looking-digital-tablet.png);
     height:100%;
   }
 }
@@ -714,7 +738,7 @@
   margin-top: 30px;
   .div-time {
     padding: 34px;
-    background-color: #023e8a;
+    background-color: #57267A;
     h2 {
       font-size: 40px;
       color: #fff;
@@ -735,7 +759,7 @@
       margin-top: 15px;
       text-align: center;
       p {
-        color: #023e8a;
+        color: #57267A;
         font-size: 22px;
         margin-bottom: 10px;
         margin-top: 0px;
@@ -754,10 +778,10 @@
       border: 0px;
       font-weight: 600;
       background-color: #fff;
-      color: #4ac1c4;
+      color: #E2225E;
       cursor: pointer;
       &:hover {
-        background-color: #4ac1c4;
+        background-color: #E2225E;
         color: #fff;
       }
     }    
@@ -801,7 +825,7 @@
         width: 100%;
       }
       &:hover {
-        background-color: #023e8a;
+        background-color:#57267A;
       }
     }
     .div-content {      
@@ -828,7 +852,7 @@
     background-position: center center;
     background-size: cover;
     width: 100%;
-    background-image: url(/assets/img/background/faq.png);
+    background-image: url(/assets/img/background/smiling-orderly-pushing-discharged-mid-adult-patient-wheelchair-corridor-hospital.png);
     height:100%;
   }
   .div-faq-content {
@@ -851,12 +875,12 @@
       }
       &:hover {
         p, i {
-          color: #023e8a;
+          color:#57267A;
         }
       }
       &.active {
         p, i {
-          color: #4ac1c4;
+          color:#E2225E;
         }
       }
     }
@@ -876,7 +900,7 @@
 .div-recent-up {
   padding: 50px 20px;
   h2 {
-    color: #023e8a;
+    color:#57267A;
     font-size: 38px;
     font-weight: 600;
     text-align: center;
@@ -911,7 +935,7 @@
     }
     .div-item-head {
       font-size: 24px;
-      color: #023e8a;
+      color: #57267A;
       margin-top: 16px;
       font-weight: 500;
       transition: 0.4s;
@@ -926,24 +950,83 @@
         margin-top: 15px;
         transition: 0.4s;
         font-weight: 500;
+        border:0px;
+        cursor: pointer;
         i {
           margin-left: 10px;
           transition: 0.4s;
         }
         &:hover {
-          color: #023e8a;
+          color: #57267A;
           i {
-            color: #4ac1c4;
+            color:#E2225E;
           }
         }
       }
     }
     &:hover {
       .div-item-head {
-        color: #4ac1c4;
+        color: #E2225E;
       }
     }
   }
 }
 
 //css for Recent Updations - Ends
+
+.btn-cart, .btn-add {
+  background: #57267A;
+  font-family: 'Outfit',sans-serif;
+  text-transform: uppercase;
+  padding: 18px 24px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  -moz-user-select: none;
+  letter-spacing: normal;
+  line-height: 0;
+  margin-bottom: 0;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.4s linear;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin: 0;
+  &:hover {
+      background: #E2225E;
+  } 
+}
+
+.btn-week-book {
+  background: #57267A;
+  font-family: 'Outfit',sans-serif;
+  text-transform: uppercase;
+  padding: 25px 30px;
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;  
+  border: 0px solid #fff;  
+  -moz-user-select: none;
+  letter-spacing: normal;
+  line-height: 0;
+  margin-bottom: 0;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.4s linear;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin: 0;
+  &:hover {
+      background: #E2225E;
+  }
+}

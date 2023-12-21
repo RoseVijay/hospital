@@ -1,8 +1,8 @@
-<div class="div-home">
+<div class="div-home" #divhome>
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-4">
-            <div class="div-service">
+            <div class="div-service" [ngClass]="{'div-service-fixed':isShow}" #divservice>
                 <div class="div-service-sub">
                     <h2>Diabetic Basic Screening (Basic)</h2>
                     <p>Also known as Diabetes Screening Test, Diabetes Basic Panel Test.</p>
@@ -319,4 +319,5 @@
             </div>
         </div>
     </div>
-</div>
+</div>          
+<div class="div-dummy" #divdummy></div>

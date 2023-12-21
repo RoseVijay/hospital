@@ -31,6 +31,7 @@ button {
         border-radius: 8px;
         box-shadow: 0 0 12px #d9d9d7;
         background-color: #fff;
+        width:420px;
         
         .div-service-sub {
             padding: 24px;
@@ -122,6 +123,10 @@ button {
             &:hover {
                 letter-spacing: 1px;
             }
+        }
+        &.div-service-fixed {
+            position:fixed;
+            top: 110px;
         }
     }
     .div-service-details {
@@ -302,4 +307,8 @@ button {
             }
         }
     }
+}
+
+.div-dummy {
+    width:100%;
 }

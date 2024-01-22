@@ -1,16 +1,16 @@
-import { Component, AfterViewInit } from '@angular/core';
-
+import { Component, AfterViewInit,OnInit } from '@angular/core';
+import {ProductService} from '../shared/sevices/product.service'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit,OnInit {
 
   divone: boolean = true;
   divtwo: boolean = false;
   divthree: boolean = false;
-
+productList: any = []
   faqone = false;
   faqtwo = false;
   faqthree = false;
@@ -19,14 +19,18 @@ export class HomeComponent implements AfterViewInit {
   hours: any;
   minutes: any;
   seconds: any;
-  constructor() { }
+  constructor(private productService:ProductService) { }
 
   ngAfterViewInit() {
     setInterval(() => {
       this.countDown();
     }, 1000);
   }
-
+  ngOnInit(): void {
+    this.productService.getProduct().subscribe((res)=>{
+      this.productList = res.data;
+    })
+  }
   showslider(divname: string) {
     console.log("div name : ", divname);
     if (divname === "one") {

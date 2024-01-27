@@ -7,7 +7,10 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductService {
-  private appurl:any = 'http://localhost:3011/api';
+  // local
+  // private appurl:any = 'http://localhost:3011/api';
+  // server
+  private appurl:any = 'https://sffzkxpp8m.ap-south-1.awsapprunner.com/api';
   constructor(
     private httpClient: HttpClient
   ) {

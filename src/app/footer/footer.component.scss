@@ -4,30 +4,106 @@ footer {
 }
 
 .div-footer {
-    background-color: #57267A;
-    color: #fff;
-    padding: 40px;
-    .div-logo {
-      width:100%;
-      padding: 0px 20px;
-      div {
-        width:80%;
-        padding: 10px;
+  background-color: #E2225E;
+  color: #fff;
+  padding: 80px;
+  .div-logo {
+    width:100%;
+    padding: 0px 20px;
+    div {
+      width:80%;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      img {
+        width:100%;
         background-color: #fff;
-        border-radius: 5px;
-        img {
-          width:100%;
-          background-color: #fff;
-        }
-      }
-      p {
-        margin-top: 20px;
       }
     }
-    .div-contact {
-      padding: 20px;
+    p {
+      margin-top: 20px;
+    }
+  }
+  .div-contact {
+    padding: 20px;
+    i {
+      margin-right: 10px;
+    }
+  }
+  .div-footer-menu {
+    padding-left: 40px;
+    .div-footer-about-us {
+      width:100%;
+      border-top: 2px solid #fff;
+      button {
+        width:100%;
+        background-color: #57267A;
+        border-radius: 50px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 6px;
+        border:0px;
+        font-size: 12px;
+        i {
+          margin-right: 5px;
+        }
+      }
+      input {
+        width:100%;
+        padding: 6px;
+        border:0px;
+        font-size: 12px;
+      }
+    }
+    .div-foo-head {
+      p {
+        font-size: 24px;
+        border-right: 2px solid #fff;
+        margin-bottom: 0px;
+        margin-top: 5px;
+        font-weight: 500;
+      }
+      &.mt50 {
+        p {
+          margin-top: 0px;
+        }
+      }
+    }
+    .div-foo-menu {
+      font-size: 16px;        
+      font-weight: 300;
       i {
-        margin-right: 10px;
+        margin-right: 5px;
+      }
+      &.mt10{
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+      &.div-our {
+        font-size: 13px;
       }
     }
   }
+}
+
+.div-footer-contact {
+  background-color: #57267A;
+}
+
+.col-cust-20 {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.mt50{
+  margin-top: 30px;
+  margin-bottom: 30px;  
+}
+
+.mt7 {
+  margin-top: 7px;
+}
+
+.mt15 {
+  margin-top: 15px;
+}

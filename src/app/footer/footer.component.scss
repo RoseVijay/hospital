@@ -94,6 +94,7 @@ footer {
     img {
       margin-top: -2px;
       width:100%;
+      margin-bottom: -2px;
     }
     
   }
@@ -107,6 +108,14 @@ footer {
         height:24px;
       }
     }
+  }
+}
+
+.div-foo-home {
+  background-color: #E2225E;
+  padding: 20px 0px 40px;
+  img {
+    width:100%;
   }
 }
 

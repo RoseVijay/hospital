@@ -18,6 +18,7 @@ import { MedicalequipmentrentalComponent } from './medicalequipmentrental/medica
 import { CaregiverforelderlyComponent } from './caregiverforelderly/caregiverforelderly.component';
 import { HomexrayComponent } from './homexray/homexray.component';
 import { ServicedetailComponent } from './servicedetail/servicedetail.component';
+import { AllservicesComponent } from './allservices/allservices.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ServicedetailComponent } from './servicedetail/servicedetail.component'
     MedicalequipmentrentalComponent,
     CaregiverforelderlyComponent,
     HomexrayComponent,
-    ServicedetailComponent
+    ServicedetailComponent,
+    AllservicesComponent
   ],
   imports: [
     BrowserModule,

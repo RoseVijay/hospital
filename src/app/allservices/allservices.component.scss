@@ -1,0 +1,118 @@
+// css for New Arrivals - Starts
+
+.div-arrivals {
+    padding:70px 40px;
+    h2 {
+      color:#57267A;
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+  
+    .btn-tabs {
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 24px;
+      border: 1px solid #fff;
+      border-bottom: 3px solid #fff;
+      transition: .4s;
+      color: #000;
+      cursor: pointer;
+      background-color: #fff;
+      &:hover, &.active {
+        color: #E2225E;
+        border-bottom: 3px solid #E2225E;
+      }
+    }  
+  }
+  
+  .div-new-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    position: relative;
+    img {
+      width:100%;
+      transition: 0.4s;
+    }
+    h3 {
+      color: #3a3a3a;
+      font-size: 20px;
+      font-weight: 500;
+      transition: 0.4s;
+      margin-top: 15px;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 0px;
+      span {
+        text-decoration: line-through;
+        color: #8b8b8b;
+        margin-left: 10px;
+      }
+    }
+    i {
+      font-size: 14px;
+      margin-right: 10px;
+      margin-top: 5px;    
+      color: #808080;
+      &.active {
+        color: #f2b500;
+      }
+    }
+    .div-offer {
+      padding: 4px 12px;
+      border-radius: 30px;
+      border:1px solid #ff0707;
+      color: #ff0707;
+      width:fit-content;
+      position:absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    &:hover {
+      h3 {
+        color: #E2225E;
+      }
+      img {
+        transform: scale(1.1);
+      }
+    }
+  
+    button {
+      margin-top: 20px;
+    }
+  }
+
+  .btn-cart, .btn-add {
+    background: #57267A;
+    font-family: 'Outfit',sans-serif;
+    text-transform: uppercase;
+    padding: 18px 24px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    -moz-user-select: none;
+    letter-spacing: normal;
+    line-height: 0;
+    margin-bottom: 0;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.4s linear;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0;
+    &:hover {
+        background: #E2225E;
+    } 
+  }
+  
+  // css for New Arrivals - Ends

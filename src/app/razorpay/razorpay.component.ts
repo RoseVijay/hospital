@@ -1,6 +1,6 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef,OnInit } from '@angular/core';
 import { ExternalLibraryService } from '../util';
-
+import {ProductService} from '../shared/sevices/product.service'
 declare let Razorpay: any;
 declare let document: any;
 @Component({
@@ -8,15 +8,21 @@ declare let document: any;
   templateUrl: './razorpay.component.html',
   styleUrls: ['./razorpay.component.scss']
 })
-export class RazorpayComponent {
+export class RazorpayComponent implements OnInit {
 
-  constructor(private razorpayService: ExternalLibraryService, private cd:  ChangeDetectorRef) { }
+  constructor(private razorpayService: ExternalLibraryService, private cd:  ChangeDetectorRef,private productService:ProductService) { }
   name = 'Angular';
   response:any;
   razorpayResponse:any;
   showModal = false;
 
   ngOnInit() {
+    // this.productService.createOrder().subscribe((res)=>{
+    //   console.log(res.data);
+    // })
+    this.productService.getUserDetails().subscribe((res)=>{
+      console.log(res.data);
+    })
     this.razorpayService
       .lazyLoadLibrary('https://checkout.razorpay.com/v1/checkout.js')
       .subscribe();

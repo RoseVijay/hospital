@@ -39,6 +39,9 @@ import {ProductService} from './shared/sevices/product.service'
     HomexrayComponent,
     ServicedetailComponent
   ],
+  exports: [
+    RazorpayComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

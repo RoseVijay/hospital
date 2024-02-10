@@ -8,9 +8,9 @@ import {map} from 'rxjs/operators';
 })
 export class ProductService {
   // local
-  // private appurl:any = 'http://localhost:3011/api';
+  private appurl:any = 'http://localhost:3011/api';
   // server
-  private appurl:any = 'https://sffzkxpp8m.ap-south-1.awsapprunner.com/api';
+  // private appurl:any = 'https://sffzkxpp8m.ap-south-1.awsapprunner.com/api';
   constructor(
     private httpClient: HttpClient
   ) {
@@ -18,5 +18,11 @@ export class ProductService {
 
   getProduct(): Observable<any> {
     return this.httpClient.get<any>(this.appurl + '/getProductDetails/getProduct').pipe(map(response => response));
+  }
+  createOrder(): Observable<any> {
+    return this.httpClient.get<any>(this.appurl + '/razorpay/createOrder').pipe(map(response => response));
+  }
+  getUserDetails(): Observable<any> {
+    return this.httpClient.get<any>(this.appurl + '/getUser/getUserDetails').pipe(map(response => response));
   }
 }

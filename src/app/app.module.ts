@@ -19,6 +19,7 @@ import { CaregiverforelderlyComponent } from './caregiverforelderly/caregiverfor
 import { HomexrayComponent } from './homexray/homexray.component';
 import { ServicedetailComponent } from './servicedetail/servicedetail.component';
 import {ProductService} from './shared/sevices/product.service'
+import { AllservicesComponent } from './allservices/allservices.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {ProductService} from './shared/sevices/product.service'
     MedicalequipmentrentalComponent,
     CaregiverforelderlyComponent,
     HomexrayComponent,
-    ServicedetailComponent
+    ServicedetailComponent,
+    AllservicesComponent
   ],
   exports: [
     RazorpayComponent

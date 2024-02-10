@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef,OnInit } from '@angular/core';
+import { Component, ChangeDetectorRef,OnInit, Input } from '@angular/core';
 import { ExternalLibraryService } from '../util';
 import {ProductService} from '../shared/sevices/product.service'
 declare let Razorpay: any;
@@ -9,8 +9,11 @@ declare let document: any;
   styleUrls: ['./razorpay.component.scss']
 })
 export class RazorpayComponent implements OnInit {
-
-  constructor(private razorpayService: ExternalLibraryService, private cd:  ChangeDetectorRef,private productService:ProductService) { }
+  @Input() productData: any;
+  RAZORPAY_OPTIONS:any;
+  constructor(private razorpayService: ExternalLibraryService, private cd:  ChangeDetectorRef,private productService:ProductService) { 
+  
+  }
   name = 'Angular';
   response:any;
   razorpayResponse:any;
@@ -28,28 +31,25 @@ export class RazorpayComponent implements OnInit {
       .subscribe();
   }
 
-  RAZORPAY_OPTIONS:any = {
-    "key": "rzp_test_iobQaY3pNJFz1L",
-    "amount": "1",
-    "name": "Vijayakumar",
-    "order_id": "",
-    "description": "Load Wallet",
-    "image": "",
-    "prefill": {
-      "name": "vijayakumar",
-      "email": "vijayrose1053@gmail.com",
-      "contact": "+919535461483",
-      "method": "sdfsf",
-    },
-    "modal": {},
-    "theme": {
-      "color": "#0096C5"
-    }
-  };
-
   public proceed() {
-    this.RAZORPAY_OPTIONS.amount = 1 + '00';
-
+    this.RAZORPAY_OPTIONS = {
+      "key": "rzp_test_iobQaY3pNJFz1L",
+      "amount": this.productData?.price + '00',
+      "name": "Vijayakumar",
+      "order_id": "",
+      "description": "Load Wallet",
+      "image": "",
+      "prefill": {
+        "name": "vijayakumar",
+        "email": "vijayrose1053@gmail.com",
+        "contact": "+919535461483",
+        "method": "sdfsf",
+      },
+      "modal": {},
+      "theme": {
+        "color": "#0096C5"
+      }
+    };
     // binding this object to both success and dismiss handler
     this.RAZORPAY_OPTIONS['handler'] = this.razorPaySuccessHandler.bind(this);
 

@@ -19,6 +19,7 @@ import { CaregiverforelderlyComponent } from './caregiverforelderly/caregiverfor
 import { HomexrayComponent } from './homexray/homexray.component';
 import { ServicedetailComponent } from './servicedetail/servicedetail.component';
 import { AllservicesComponent } from './allservices/allservices.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AllservicesComponent } from './allservices/allservices.component';
     CaregiverforelderlyComponent,
     HomexrayComponent,
     ServicedetailComponent,
-    AllservicesComponent
+    AllservicesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

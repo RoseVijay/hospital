@@ -14,6 +14,7 @@ import { CaregiverforelderlyComponent } from './caregiverforelderly/caregiverfor
 import { HomexrayComponent } from './homexray/homexray.component';
 import { ServicedetailComponent } from './servicedetail/servicedetail.component';
 import { AllservicesComponent } from './allservices/allservices.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
   {
     path: 'allservices',
     component: AllservicesComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 

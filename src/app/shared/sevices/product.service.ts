@@ -19,8 +19,11 @@ export class ProductService {
   getProduct(): Observable<any> {
     return this.httpClient.get<any>(this.appurl + '/getProductDetails/getProduct').pipe(map(response => response));
   }
-  createOrder(): Observable<any> {
-    return this.httpClient.get<any>(this.appurl + '/razorpay/createOrder').pipe(map(response => response));
+  createOrder(order:any): Observable<any> {
+    return this.httpClient.post<any>(this.appurl + '/razorpay/createOrder',order).pipe(map(response => response));
+  } 
+  payment(payment:any): Observable<any> {
+    return this.httpClient.post<any>(this.appurl + '/razorpay/payment',payment).pipe(map(response => response));
   }
   getUserDetails(): Observable<any> {
     return this.httpClient.get<any>(this.appurl + '/getUser/getUserDetails').pipe(map(response => response));

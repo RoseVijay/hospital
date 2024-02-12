@@ -1,6 +1,6 @@
-import { Component, ChangeDetectorRef,OnInit, Input } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, Input } from '@angular/core';
 import { ExternalLibraryService } from '../util';
-import {ProductService} from '../shared/sevices/product.service'
+import { ProductService } from '../shared/sevices/product.service'
 declare let Razorpay: any;
 declare let document: any;
 @Component({
@@ -10,57 +10,71 @@ declare let document: any;
 })
 export class RazorpayComponent implements OnInit {
   @Input() productData: any;
-  RAZORPAY_OPTIONS:any;
-  constructor(private razorpayService: ExternalLibraryService, private cd:  ChangeDetectorRef,private productService:ProductService) { 
-  
+  RAZORPAY_OPTIONS: any;
+  constructor(private razorpayService: ExternalLibraryService, private cd: ChangeDetectorRef, private productService: ProductService) {
+
   }
   name = 'Angular';
-  response:any;
-  razorpayResponse:any;
+  response: any;
+  razorpayResponse: any;
   showModal = false;
 
   ngOnInit() {
-    // this.productService.createOrder().subscribe((res)=>{
-    //   console.log(res.data);
-    // })
-    this.productService.getUserDetails().subscribe((res)=>{
-      console.log(res.data);
-    })
     this.razorpayService
       .lazyLoadLibrary('https://checkout.razorpay.com/v1/checkout.js')
       .subscribe();
   }
 
   public proceed() {
-    this.RAZORPAY_OPTIONS = {
-      "key": "rzp_test_iobQaY3pNJFz1L",
-      "amount": this.productData?.price + '00',
-      "name": "Vijayakumar",
-      "order_id": "",
-      "description": "Load Wallet",
-      "image": "",
-      "prefill": {
-        "name": "vijayakumar",
-        "email": "vijayrose1053@gmail.com",
-        "contact": "+919535461483",
-        "method": "sdfsf",
-      },
-      "modal": {},
-      "theme": {
-        "color": "#0096C5"
+    let createOrder = {
+      amount: this.productData?.price + '00',
+      currency: "INR",
+      receipt: 'receipt#1hospital',
+      notes: {
+        "description": this.productData?.name
       }
-    };
-    // binding this object to both success and dismiss handler
-    this.RAZORPAY_OPTIONS['handler'] = this.razorPaySuccessHandler.bind(this);
-
-
-    let razorpay = new Razorpay(this.RAZORPAY_OPTIONS)
-    razorpay.open();
+    }
+    this.productService.createOrder(createOrder).subscribe((order) => {
+      this.productService.getUserDetails().subscribe((res) => {
+        this.RAZORPAY_OPTIONS = {
+          "key": res.data?.razorpay_key,
+          "amount": this.productData?.price + '00',
+          "name": res.data?.name,
+          "currency": "INR",
+          "order_id": order?.data?.id,
+          "description": this.productData?.name,
+          "image": "",
+          "prefill": {
+            "name": res.data?.name,
+            "email": res.data?.email,
+            "contact": res.data?.phone,
+            "method": "sdfsf",
+          },
+          "notes": {
+            "description": this.productData?.name,
+          },
+          "modal": {},
+          "theme": {
+            "color": "#0096C5"
+          }
+        };
+        this.RAZORPAY_OPTIONS['handler'] = this.razorPaySuccessHandler.bind(this);
+        let razorpay = new Razorpay(this.RAZORPAY_OPTIONS)
+        razorpay.open();
+      });
+    })
   }
 
-  public razorPaySuccessHandler(response:any) {
+  public razorPaySuccessHandler(response: any) {
     console.log(response);
-    this.razorpayResponse = 'Razorpay Response '+ response.razorpay_payment_id;
+    let payment = {
+      RAZORPAY_OPTIONS: this.RAZORPAY_OPTIONS,
+      razorpay_payment_id: response.razorpay_payment_id
+    }
+    this.productService.payment(payment).subscribe((res) => {
+      console.log(res.data);
+    })
+    this.razorpayResponse = 'Razorpay Response ' + response.razorpay_payment_id;
     this.showModal = true;
     this.cd.detectChanges()
     document.getElementById('#razorpay-response').style.display = 'block';

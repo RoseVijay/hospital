@@ -10,6 +10,7 @@ declare let document: any;
 })
 export class RazorpayComponent implements OnInit {
   @Input() productData: any;
+  @Input() detailsPage: any; 
   RAZORPAY_OPTIONS: any;
   constructor(private razorpayService: ExternalLibraryService, private cd: ChangeDetectorRef, private productService: ProductService) {
 

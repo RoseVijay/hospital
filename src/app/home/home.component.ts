@@ -1,5 +1,6 @@
 import { Component, AfterViewInit,OnInit } from '@angular/core';
-import {ProductService} from '../shared/sevices/product.service'
+import {ProductService} from '../shared/sevices/product.service';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -21,7 +22,7 @@ productList: any = []
   seconds: any;
   seletedCategoryIndex: number = 0;
   categoryList: any = ['Health Check-ups', 'Equipment Rentals', 'Care at Home','Physiotherapy']
-  constructor(private productService:ProductService) { }
+  constructor(private productService:ProductService,private router: Router) { }
 
   ngAfterViewInit() {
     setInterval(() => {
@@ -30,6 +31,9 @@ productList: any = []
   }
   ngOnInit(): void {
     this.selectCategory('Health Check-ups', 0)
+  }
+  viewProduct(product: any) {
+    this.router.navigate(['/servicedetails', product.id])
   }
   selectCategory(category: string, i: number) {
     this.seletedCategoryIndex = i

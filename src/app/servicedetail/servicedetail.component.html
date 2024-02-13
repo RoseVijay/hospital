@@ -23,7 +23,8 @@
                         <span>₹{{productDetails?.price}}</span>
                     </div>
                 </div>
-                <button class="btn-add-to-cart">Add To Cart</button>
+                <!-- <button class="btn-add-to-cart">Add To Cart</button> -->
+                <app-razorpay [detailsPage]="true" [productData]="productDetails"></app-razorpay>
             </div>
         </div>
         <div class="col-md-6">

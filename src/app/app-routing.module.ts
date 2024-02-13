@@ -65,7 +65,7 @@ const routes: Routes = [
     component: HomexrayComponent
   },
   {
-    path: 'servicedetails',
+    path: 'servicedetails/:id',
     component: ServicedetailComponent
   },
   {

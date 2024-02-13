@@ -4,23 +4,23 @@
         <div class="col-md-4">
             <div class="div-service" [ngClass]="{'div-service-fixed':isShow}" #divservice>
                 <div class="div-service-sub">
-                    <h2>Diabetic Basic Screening (Basic)</h2>
-                    <p>Also known as Diabetes Screening Test, Diabetes Basic Panel Test.</p>
+                    <h2>{{productDetails?.name}}</h2>
+                    <p>{{productDetails?.discription}}</p>
                     <div class="div-timer">
                         <p>Get reports</p>
-                        <span>Within 8 Hours</span>
+                        <span>{{productDetails?.reportTime}}</span>
                     </div>
                     <div class="div-pre">
-                        <p><i class="fa fa-info-circle" aria-hidden="true"></i> 10 - 12 Hr fasting is required</p>
+                        <p><i class="fa fa-info-circle" aria-hidden="true"></i> {{productDetails?.fastingTime}}</p>
                     </div>
                     <div class="div-offer">
                         <span>BEST VALUE</span>
                     </div>
-                    <div class="div-offer-amt">
-                        <p>MRP <span class="span-strike">₹999</span> <span class="span-offer">45% off</span></p>
+                    <div class="div-offer-amt" *ngIf="productDetails?.discount">
+                        <p>MRP <span class="span-strike">₹{{productDetails?.discount}}</span> <span class="span-offer">15% off</span></p>
                     </div>
                     <div class="div-amt">
-                        <span>₹555</span>
+                        <span>₹{{productDetails?.price}}</span>
                     </div>
                 </div>
                 <button class="btn-add-to-cart">Add To Cart</button>
@@ -28,51 +28,21 @@
         </div>
         <div class="col-md-6">
             <div class="div-service-details">
-                <h2>Total Tests Included (18)</h2>
+                <h2>Total Tests Included ({{tests?.length}})</h2>
                 <div class="div-service-card">
                     <div class="row">
                         <div class="col-md-10">
-                            <h3>Diabetic Basic Screening (Basic)</h3>
+                            <h3>{{productDetails?.name}}</h3>
                         </div>
                         <div class="col-md-2 text-right">
                             <i class="fa fa-angle-down" (click)="showtextlist()" [ngClass]="{'fa-rotate-180' : servicelist}" aria-hidden="true"></i>
                         </div>
                         <div class="col-md-12">
-                            <p>18 Tests Included</p>
+                            <p>{{tests?.length}} Tests Included</p>
                         </div>
                         <div class="div-tests col-md-12 mt-4" *ngIf="servicelist">
                             <ul>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Glucose Fasting</span></li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>HbA1c</span></li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Complete Urine Examination (12 Tests Included)</span></li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Physical Examination</span></li>
-                                <li>
-                                    <ul>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Colour</span></li>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Transparency</span></li>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>PH</span></li>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Sp. Gravity</span></li>
-                                    </ul>
-                                </li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Biochemical Examination</span></li>
-                                <li>
-                                    <ul>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Urine Protein</span></li>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Glucose</span></li>
-                                        
-                                    </ul>
-                                </li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Centrifuged Sediment Wet Mount and Microscopy</span></li>
-                                <li>
-                                    <ul>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Pus Cells</span></li>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Epithelial Cells (Optional)</span></li>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>RBC</span></li>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Casts</span></li>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Crystals</span></li>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Others (Optional)</span></li>
-                                    </ul>
-                                </li>
+                                <li *ngFor="let test of  tests;let i = index"><i class="fa fa-caret-right" aria-hidden="true"></i><span>{{test?.test_name}}</span></li>
                             </ul>
                         </div>
                     </div>
@@ -87,15 +57,15 @@
                     <div class="row div-about-test">
                         <div class="col-md-4">
                             <p>Sample</p>
-                            <span>BLOOD, URINE</span>
+                            <span>{{productDetails?.testSample}}</span>
                         </div>
                         <div class="col-md-4">
                             <p>Gender</p>
-                            <span>Both</span>
+                            <span>{{productDetails?.gender}}</span>
                         </div>
                         <div class="col-md-4">
                             <p>Age group</p>
-                            <span>All age group</span>
+                            <span>{{productDetails?.ageGroup}}</span>
                         </div>
                     </div>
                     <div class="row">
@@ -234,26 +204,26 @@
                         </div>
                     </div>
                 </div>
-                <div class="div-faq">
+                <div class="div-faq" *ngIf="questionAnswer?.length">
                     <h2>Frequently Asked Questions (FAQ)</h2>
                     <div class="div-service-card">
-                        <div class="div-faq-content">
+                        <div class="div-faq-content" *ngFor="let ques of  questionAnswer;let i = index">
                             <div class="row">
                                 <div class="col-md-11">
-                                    <span>What is the purpose of the Glucose Fasting test in the Diabetes Panel - Basic?</span>
+                                    <span>{{ques?.question}}</span>
                                 </div>
                                 <div class="col-md-1">
-                                    <i class="fa fa-angle-down" (click)="showfaqans('one')" [ngClass]="{'fa-rotate-180' : faqone}" aria-hidden="true"></i>
+                                    <i class="fa fa-angle-down" (click)="openQuestionAnswer = i" [ngClass]="{'fa-rotate-180' : openQuestionAnswer === i}" aria-hidden="true"></i>
                                 </div>
-                                <div class="col-md-12" *ngIf="faqone">
-                                    <p>The Glucose Fasting test measures blood glucose levels after an overnight fast. It provides crucial information on short-term glycemic control, aiding in the assessment of diabetes.</p>
+                                <div class="col-md-12" *ngIf="openQuestionAnswer === i">
+                                    <p>{{ques?.answer}}</p>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="div-line"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="div-faq-content">
+                        <!-- <div class="div-faq-content">
                             <div class="row">
                                 <div class="col-md-11">
                                     <span>Why is HbA1c included in the Diabetes Panel - Basic?</span>
@@ -313,7 +283,7 @@
                                     <p> The Biochemical Examination assesses urine protein and glucose levels. Elevated levels may indicate kidney dysfunction and uncontrolled diabetes, respectively.</p>
                                 </div>                               
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

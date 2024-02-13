@@ -97,7 +97,7 @@
                         <div class="color">
                             <h2>Comprehensive Diabetic Screening @ Home</h2>
                             <p>Starts at ₹555</p>
-                            <button type="button" class="two" routerLink="/servicedetails">
+                            <button type="button" class="two" routerLink="/servicedetails/5">
                                 book now
                             </button>
                         </div>
@@ -188,9 +188,9 @@
 
             <div class="row">
                 <div class="col-md-12 text-center">                    
-                    <button type="button" class="btn-tabs active">Health Check-ups</button>
-                    <button type="button" class="btn-tabs">Equipment Rentals</button>
-                    <button type="button" class="btn-tabs">Care at Home</button>
+                    <ng-container *ngFor="let category of categoryList;let i = index">
+                        <button type="button" class="btn-tabs" [ngClass]="seletedCategoryIndex === i ? 'active' : ''" (click)="selectCategory(category,i)">{{category}}</button>
+                    </ng-container>
                     <button type="button" class="btn-tabs" routerLink="/allservices">All Services</button>
                 </div>
             </div>

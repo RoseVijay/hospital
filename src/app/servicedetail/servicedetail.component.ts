@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-
+import { ProductService } from '../shared/sevices/product.service'
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-servicedetail',
   templateUrl: './servicedetail.component.html',
@@ -12,22 +13,28 @@ export class ServicedetailComponent {
   @ViewChild('divdummy') divDumEl: any;
   servicelist: boolean = false;
   aboutmoreless: boolean = false;
-  faqone: boolean = false;
-  faqtwo: boolean = false;
-  faqthree: boolean = false;
-  faqfour: boolean = false;
-  faqfive: boolean = false;
 
   
   isShow: boolean = false;
   topPosToStartShowing = 20;
+  productDetails:any = {}
+  questionAnswer:any = [];
+  openQuestionAnswer:any;
+  tests:any = []
+  constructor(private productService: ProductService, private router: Router , private activatedRoute : ActivatedRoute) { 
+
+  }
 
   ngOnInit() {
     setTimeout(() => {
       this.gotoTop();
     }, 500);
-    
-    
+    let productId = this.activatedRoute?.snapshot?.params['id'];
+    this.productService.getProductDetails(productId).subscribe((res) => {
+      this.productDetails = res.data;
+      this.questionAnswer = res?.questionAnswer;
+      this.tests = res?.tests;
+    })
   }
 
   ngAfterViewInit() {    
@@ -87,23 +94,4 @@ gotoTop() {
   readless() {
     this.aboutmoreless = false;
   }  
-
-  showfaqans(faqname: string) {
-    // console.log("div name : ", faqname);
-    if (faqname === "one") {
-      this.faqone = !this.faqone;
-    }
-    if (faqname === "two") {
-      this.faqtwo = !this.faqtwo;
-    }
-    if (faqname === "three") {
-      this.faqthree = !this.faqthree;
-    }
-    if (faqname === "four") {
-      this.faqfour = !this.faqfour;
-    }
-    if (faqname === "five") {
-      this.faqfive = !this.faqfive;
-    }
-  }
 }

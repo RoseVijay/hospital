@@ -19,6 +19,8 @@ productList: any = []
   hours: any;
   minutes: any;
   seconds: any;
+  seletedCategoryIndex: number = 0;
+  categoryList: any = ['Health Check-ups', 'Equipment Rentals', 'Care at Home']
   constructor(private productService:ProductService) { }
 
   ngAfterViewInit() {
@@ -27,7 +29,11 @@ productList: any = []
     }, 1000);
   }
   ngOnInit(): void {
-    this.productService.getProduct().subscribe((res)=>{
+    this.selectCategory('Health Check-ups', 0)
+  }
+  selectCategory(category: string, i: number) {
+    this.seletedCategoryIndex = i
+    this.productService.getProductCategory(category).subscribe((res) => {
       this.productList = res.data;
     })
   }

@@ -4,9 +4,9 @@
     <div class="div-arrivals">
         <div class="row">
             <div class="col-md-12 text-center">
-                <button type="button" class="btn-tabs active">Health Check-ups</button>
-                <button type="button" class="btn-tabs">Equipment Rentals</button>
-                <button type="button" class="btn-tabs">Care at Home</button>
+                <ng-container *ngFor="let category of categoryList;let i = index">
+                <button type="button" class="btn-tabs" [ngClass]="seletedCategoryIndex === i ? 'active' : ''" (click)="selectCategory(category,i)">{{category}}</button>
+            </ng-container>
             </div>
         </div>
         <div class="row">
@@ -23,7 +23,7 @@
                         <i class="fa fa-star active" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
                     </div>
-                    <button type="button" class="btn-cart">ADD TO CART</button>
+                    <button type="button" class="btn-cart" (click)="viewProduct(product)">VIEW</button>
                     <app-razorpay [productData]="product"></app-razorpay>
                 </div>
             </div>

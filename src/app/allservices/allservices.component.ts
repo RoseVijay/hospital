@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AllservicesComponent implements OnInit {
   productList: any = []
   seletedCategoryIndex: number = 0;
-  categoryList: any = ['Health Check-ups', 'Equipment Rentals', 'Care at Home']
+  categoryList: any = ['Health Check-ups', 'Equipment Rentals', 'Care at Home','Physiotherapy']
   constructor(private productService: ProductService, private router: Router) { }
   ngOnInit(): void {
     this.selectCategory('Health Check-ups', 0)

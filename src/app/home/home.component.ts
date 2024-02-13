@@ -20,7 +20,7 @@ productList: any = []
   minutes: any;
   seconds: any;
   seletedCategoryIndex: number = 0;
-  categoryList: any = ['Health Check-ups', 'Equipment Rentals', 'Care at Home']
+  categoryList: any = ['Health Check-ups', 'Equipment Rentals', 'Care at Home','Physiotherapy']
   constructor(private productService:ProductService) { }
 
   ngAfterViewInit() {

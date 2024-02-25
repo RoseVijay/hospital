@@ -14,14 +14,15 @@ export class ServicedetailComponent {
   servicelist: boolean = false;
   aboutmoreless: boolean = false;
 
-  
+
   isShow: boolean = false;
   topPosToStartShowing = 20;
-  productDetails:any = {}
-  questionAnswer:any = [];
-  openQuestionAnswer:any;
-  tests:any = []
-  constructor(private productService: ProductService, private router: Router , private activatedRoute : ActivatedRoute) { 
+  productDetails: any = {}
+  questionAnswer: any = [];
+  openQuestionAnswer: any;
+  tests: any = []
+  relatedProduct: any = [];
+  constructor(private productService: ProductService, private router: Router, private activatedRoute: ActivatedRoute) {
 
   }
 
@@ -34,34 +35,35 @@ export class ServicedetailComponent {
       this.productDetails = res.data;
       this.questionAnswer = res?.questionAnswer;
       this.tests = res?.tests;
+      this.relatedProduct = res?.relatedProduct;
     })
   }
 
-  ngAfterViewInit() {    
+  ngAfterViewInit() {
     const height = this.targetElement.nativeElement.offsetHeight;
-    console.log("div home height : ",height);
+    console.log("div home height : ", height);
 
     const divServiceHt = this.divServiceEl.nativeElement.offsetHeight;
-    console.log("div Service height : ",divServiceHt);
+    console.log("div Service height : ", divServiceHt);
 
     const divServiceTop = this.divServiceEl.nativeElement.offsetTop;
-    console.log("div Service Top : ",divServiceTop);
+    console.log("div Service Top : ", divServiceTop);
 
     const divDumHt = this.divDumEl.nativeElement.offsetTop;
-    console.log("div Above footer height : ",divDumHt);
-}
+    console.log("div Above footer height : ", divDumHt);
+  }
 
-// TODO: Cross browsing
-gotoTop() {
-  window.scrollTo(0, 0);
-}
+  // TODO: Cross browsing
+  gotoTop() {
+    window.scrollTo(0, 0);
+  }
 
   // constructor(private el: ElementRef) {}
 
   @HostListener('window:scroll')
 
   checkScroll() {
-      
+
     // window의 scroll top
     // Both window.pageYOffset and document.documentElement.scrollTop returns the same result in all the cases. window.pageYOffset is not supported below IE 9.
 
@@ -70,12 +72,12 @@ gotoTop() {
     console.log('[scroll]', scrollPosition);
 
     const divServiceTopscroll = this.divServiceEl.nativeElement.offsetTop;
-    console.log("div Service Top while Scroll: ",divServiceTopscroll);
+    console.log("div Service Top while Scroll: ", divServiceTopscroll);
 
     // const heigthChild = this.divhomeEl.nativeElement.offsetHeight;
 
     // console.log('heigthChild : ', heigthChild);
-    
+
     if (scrollPosition >= this.topPosToStartShowing) {
       this.isShow = true;
     } else {
@@ -93,5 +95,12 @@ gotoTop() {
 
   readless() {
     this.aboutmoreless = false;
-  }  
+  }
+  addProduct(related: any) {
+    if (!related?.added) {
+      related.added = true;
+    } else {
+      related.added = false;
+    }
+  }
 }

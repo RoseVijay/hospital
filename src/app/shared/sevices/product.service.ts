@@ -8,9 +8,9 @@ import { map } from 'rxjs/operators';
 })
 export class ProductService {
   // local
-  // private appurl: any = 'http://localhost:3011/api';
+  private appurl: any = 'http://localhost:3011/api';
   // server
-  private appurl:any = 'https://sffzkxpp8m.ap-south-1.awsapprunner.com/api';
+  // private appurl:any = 'https://sffzkxpp8m.ap-south-1.awsapprunner.com/api';
   constructor(
     private httpClient: HttpClient
   ) {

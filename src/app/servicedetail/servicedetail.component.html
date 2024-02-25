@@ -120,12 +120,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="div-top-booked">
+                <div class="div-top-booked" *ngIf="relatedProduct?.length">
                     <h2>Top Booked Tests</h2>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6"  *ngFor="let related of  relatedProduct;let i = index">
                             <div class="div-service-card">
-                                <h3>Diabetic Screening (Advanced)</h3>
+                                <h3>{{related?.name}}</h3>
                                 <div class="div-line"></div>
                                 <div class="div-offer-amt">
                                     <p>MRP <span class="span-strike">₹1999</span> <span class="span-offer">25% off</span></p>
@@ -133,71 +133,11 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="div-amt">
-                                            <span>₹1222</span>
+                                            <span>{{related?.price}}</span>
                                         </div>
                                     </div>
                                     <div class="col-md-6 text-right">
-                                        <button class="btn-add" type="button">Add</button>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="div-service-card">
-                                <h3>Full Body Checkup (Basic)</h3>
-                                <div class="div-line"></div>
-                                <div class="div-offer-amt">
-                                    <p>MRP <span class="span-strike">₹1999</span> <span class="span-offer">25% off</span></p>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="div-amt">
-                                            <span>₹1380</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 text-right">
-                                        <button class="btn-add" type="button">Add</button>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="div-service-card">
-                                <h3>Full Body Checkup (Advanced)</h3>
-                                <div class="div-line"></div>
-                                <div class="div-offer-amt">
-                                    <p>MRP <span class="span-strike">₹1999</span> <span class="span-offer">25% off</span></p>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="div-amt">
-                                            <span>₹4950</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 text-right">
-                                        <button class="btn-add" type="button">Add</button>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="div-service-card">
-                                <h3>Full Body Checkup (Executive)</h3>
-                                <div class="div-line"></div>
-                                <div class="div-offer-amt">
-                                    <p>MRP <span class="span-strike">₹1999</span> <span class="span-offer">25% off</span></p>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="div-amt">
-                                            <span>₹5550</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 text-right">
-                                        <button class="btn-add" type="button">Add</button>
+                                        <button class="btn-add" (click)="addProduct(related)" type="button">{{ related.added ? 'Remove' : 'Add'}}</button>
                                     </div>
                                 </div>
                                 
@@ -224,67 +164,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="div-faq-content">
-                            <div class="row">
-                                <div class="col-md-11">
-                                    <span>Why is HbA1c included in the Diabetes Panel - Basic?</span>
-                                </div>
-                                <div class="col-md-1">
-                                    <i class="fa fa-angle-down" (click)="showfaqans('two')" [ngClass]="{'fa-rotate-180' : faqtwo}" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-md-12" *ngIf="faqtwo">
-                                    <p> HbA1c, or Glycated Hemoglobin, is a key test that reports the average blood glucose levels over the past 2 to 3 months. It provides insights into long-term glycemic control, helping in the diagnosis and management of diabetes.</p>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="div-line"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="div-faq-content">
-                            <div class="row">
-                                <div class="col-md-11">
-                                    <span>What does the Complete Urine Examination (12 Tests) encompass?</span>
-                                </div>
-                                <div class="col-md-1">
-                                    <i class="fa fa-angle-down" (click)="showfaqans('three')" [ngClass]="{'fa-rotate-180' : faqthree}" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-md-12" *ngIf="faqthree">
-                                    <p> The Complete Urine Examination includes a comprehensive assessment, covering physical and biochemical examinations, as well as centrifuged sediment wet mount and microscopy. It evaluates factors such as color, transparency, pH, specific gravity, urine protein, glucose, and microscopic elements like pus cells, epithelial cells, RBCs, casts, crystals, and others.</p>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="div-line"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="div-faq-content">
-                            <div class="row">
-                                <div class="col-md-11">
-                                    <span>How does the Physical Examination of urine contribute to the diagnosis?</span>
-                                </div>
-                                <div class="col-md-1">
-                                    <i class="fa fa-angle-down" (click)="showfaqans('four')" [ngClass]="{'fa-rotate-180' : faqfour}" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-md-12" *ngIf="faqfour">
-                                    <p> The physical examination assesses color, transparency, pH, and specific gravity of urine. Changes in these parameters can indicate various health conditions, including those related to diabetes.</p>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="div-line"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="div-faq-content">
-                            <div class="row">
-                                <div class="col-md-11">
-                                    <span> What information does the Biochemical Examination (Urine Protein, Glucose) provide?</span>
-                                </div>
-                                <div class="col-md-1">
-                                    <i class="fa fa-angle-down" (click)="showfaqans('five')" [ngClass]="{'fa-rotate-180' : faqfive}" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-md-12" *ngIf="faqfive">
-                                    <p> The Biochemical Examination assesses urine protein and glucose levels. Elevated levels may indicate kidney dysfunction and uncontrolled diabetes, respectively.</p>
-                                </div>                               
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>

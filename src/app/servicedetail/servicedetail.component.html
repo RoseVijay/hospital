@@ -247,12 +247,16 @@
                         <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter email">
                     </div>
                 </div>
+                <div *ngIf="buyNowStep === 3">
+                   <span>productDetails.name</span>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" (click)="buyNowStep = 1" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" *ngIf="buyNowStep === 1" (click)="nextStep()">Next</button>
-                <button type="button" class="btn btn-primary" *ngIf="buyNowStep === 2 && !buyNow" disabled>Buy Now</button>
-                <app-razorpay [detailsPage]="true" *ngIf="buyNowStep === 2 && buyNow" [productData]="productDetails"></app-razorpay>
+                <button type="button" class="btn btn-primary" *ngIf="buyNowStep === 1" (click)="buyNowStep = 2">Next</button>
+                <button type="button" class="btn btn-primary" *ngIf="buyNowStep === 2" (click)="buyNowStep = 3">Next</button>
+                <button type="button" class="btn btn-primary" *ngIf="buyNowStep === 3 && !buyNow" disabled>Buy Now</button>
+                <app-razorpay [detailsPage]="true" *ngIf="buyNowStep === 3 && buyNow" [productData]="productDetails"></app-razorpay>
             </div>
         </div>
     </div>

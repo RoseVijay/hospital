@@ -104,7 +104,4 @@ export class ServicedetailComponent {
       related.added = false;
     }
   }
-  nextStep() {
-    this.buyNowStep = 2;
-  }
 }

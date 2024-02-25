@@ -14,7 +14,8 @@ export class ServicedetailComponent {
   servicelist: boolean = false;
   aboutmoreless: boolean = false;
 
-
+  buyNowStep: number = 1;
+  buyNow: boolean = false
   isShow: boolean = false;
   topPosToStartShowing = 20;
   productDetails: any = {}
@@ -102,5 +103,8 @@ export class ServicedetailComponent {
     } else {
       related.added = false;
     }
+  }
+  nextStep() {
+    this.buyNowStep = 2;
   }
 }

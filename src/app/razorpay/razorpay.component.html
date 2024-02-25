@@ -1,7 +1,6 @@
 
 
-<button class="btn-cart" *ngIf="!detailsPage" (click)="proceed()">Buy now</button>
-<button class="btn-add-to-cart" *ngIf="detailsPage"(click)="proceed()">Buy now</button>
+<button class="btn-cart" (click)="proceed()">Buy now</button>
 
 
 <div class="novopay-response-modal modal fade" role="dialog"     [ngClass]="{'show': showModal}"

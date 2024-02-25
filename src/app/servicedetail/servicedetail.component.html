@@ -17,14 +17,16 @@
                         <span>BEST VALUE</span>
                     </div>
                     <div class="div-offer-amt" *ngIf="productDetails?.discount">
-                        <p>MRP <span class="span-strike">₹{{productDetails?.discount}}</span> <span class="span-offer">15% off</span></p>
+                        <p>MRP <span class="span-strike">₹{{productDetails?.discount}}</span> <span
+                                class="span-offer">15% off</span></p>
                     </div>
                     <div class="div-amt">
                         <span>₹{{productDetails?.price}}</span>
                     </div>
                 </div>
-                <!-- <button class="btn-add-to-cart">Add To Cart</button> -->
-                <app-razorpay [detailsPage]="true" [productData]="productDetails"></app-razorpay>
+                <button type="button" class="btn-add-to-cart" data-toggle="modal" data-target="#exampleModal">
+                    Buy Now
+                </button>
             </div>
         </div>
         <div class="col-md-6">
@@ -36,20 +38,22 @@
                             <h3>{{productDetails?.name}}</h3>
                         </div>
                         <div class="col-md-2 text-right">
-                            <i class="fa fa-angle-down" (click)="showtextlist()" [ngClass]="{'fa-rotate-180' : servicelist}" aria-hidden="true"></i>
+                            <i class="fa fa-angle-down" (click)="showtextlist()"
+                                [ngClass]="{'fa-rotate-180' : servicelist}" aria-hidden="true"></i>
                         </div>
                         <div class="col-md-12">
                             <p>{{tests?.length}} Tests Included</p>
                         </div>
                         <div class="div-tests col-md-12 mt-4" *ngIf="servicelist">
                             <ul>
-                                <li *ngFor="let test of  tests;let i = index"><i class="fa fa-caret-right" aria-hidden="true"></i><span>{{test?.test_name}}</span></li>
+                                <li *ngFor="let test of  tests;let i = index"><i class="fa fa-caret-right"
+                                        aria-hidden="true"></i><span>{{test?.test_name}}</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="div-service-card">                    
+                <div class="div-service-card">
                     <div class="row">
                         <div class="col-md-12">
                             <h3>About </h3>
@@ -72,48 +76,85 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="div-about-less">
-                                <p>Curated by Dr. Vijaya, Parvathy Homecare introduces the Basic Diabetes Screening - made to include vital tests such as Glucose Fasting, HbA1c, and a comprehensive Complete Urine Examination comprising 12 essential tests. This panel not only monitors diabetes and its effects but also accurately identifies the risk of developing other serious illnesses associated with diabetes. It is recommended for individuals who are prediabetic, diabetic, or have a family history of diabetes.</p>
-                                <button (click)="readmore()" class="btn-more" type="button" *ngIf="!aboutmoreless">Read More</button>
+                                <p>Curated by Dr. Vijaya, Parvathy Homecare introduces the Basic Diabetes Screening -
+                                    made to include vital tests such as Glucose Fasting, HbA1c, and a comprehensive
+                                    Complete Urine Examination comprising 12 essential tests. This panel not only
+                                    monitors diabetes and its effects but also accurately identifies the risk of
+                                    developing other serious illnesses associated with diabetes. It is recommended for
+                                    individuals who are prediabetic, diabetic, or have a family history of diabetes.</p>
+                                <button (click)="readmore()" class="btn-more" type="button" *ngIf="!aboutmoreless">Read
+                                    More</button>
                             </div>
                             <div class="div-about-more" *ngIf="aboutmoreless">
-                                <p>Diabetes is a chronic condition where the body fails to produce sufficient insulin, leading to an accumulation of excess blood sugar. Over time, this disorder can result in vision loss, kidney failure, or heart disease.</p>
-                                <p>Key signs indicating the need for a blood sugar test include frequent or abnormal urination, increased thirst, extreme fatigue, blurred vision, unexpected weight loss, and numbness in the hands or feet. A blood sugar test, also known as a Diabetes Panel - Basic, is essential for an accurate diagnosis. This test typically measures blood glucose levels, providing insights into the severity of diabetes.</p>
+                                <p>Diabetes is a chronic condition where the body fails to produce sufficient insulin,
+                                    leading to an accumulation of excess blood sugar. Over time, this disorder can
+                                    result in vision loss, kidney failure, or heart disease.</p>
+                                <p>Key signs indicating the need for a blood sugar test include frequent or abnormal
+                                    urination, increased thirst, extreme fatigue, blurred vision, unexpected weight
+                                    loss, and numbness in the hands or feet. A blood sugar test, also known as a
+                                    Diabetes Panel - Basic, is essential for an accurate diagnosis. This test typically
+                                    measures blood glucose levels, providing insights into the severity of diabetes.</p>
                                 <p>The diabetes test package includes crucial categories of tests:</p>
                                 <div class="div-about-list">
-                                    <p><span>Glucose, Fasting:</span> Measures fasting glucose levels, providing information on short-term glycemic control.</p>
-                                    <p><span>HbA1C, Glycated Hemoglobin:</span> Reports average blood glucose levels over the past 2 to 3 months.</p>
+                                    <p><span>Glucose, Fasting:</span> Measures fasting glucose levels, providing
+                                        information on short-term glycemic control.</p>
+                                    <p><span>HbA1C, Glycated Hemoglobin:</span> Reports average blood glucose levels
+                                        over the past 2 to 3 months.</p>
                                     <p><span>Complete Urine Examination (12 Tests):</span></p>
                                     <ul>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Physical Examination:</span></li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Physical
+                                                Examination:</span></li>
                                         <li>
                                             <ul>
-                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Colour</span></li>
-                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Transparency</span></li>
-                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>PH</span></li>
-                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Sp. Gravity</span></li>
+                                                <li><i class="fa fa-caret-right"
+                                                        aria-hidden="true"></i><span>Colour</span></li>
+                                                <li><i class="fa fa-caret-right"
+                                                        aria-hidden="true"></i><span>Transparency</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>PH</span>
+                                                </li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Sp.
+                                                        Gravity</span></li>
                                             </ul>
                                         </li>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Biochemical Examination</span></li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Biochemical
+                                                Examination</span></li>
                                         <li>
                                             <ul>
-                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Urine Protein</span></li>
-                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Glucose</span></li>
-                                                
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Urine
+                                                        Protein</span></li>
+                                                <li><i class="fa fa-caret-right"
+                                                        aria-hidden="true"></i><span>Glucose</span></li>
+
                                             </ul>
                                         </li>
-                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Centrifuged Sediment Wet Mount and Microscopy</span></li>
+                                        <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Centrifuged
+                                                Sediment Wet Mount and Microscopy</span></li>
                                         <li>
                                             <ul>
-                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Pus Cells</span></li>
-                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Epithelial Cells (Optional)</span></li>
-                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>RBC</span></li>
-                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Casts</span></li>
-                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Crystals</span></li>
-                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Others (Optional)</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Pus
+                                                        Cells</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Epithelial
+                                                        Cells (Optional)</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>RBC</span>
+                                                </li>
+                                                <li><i class="fa fa-caret-right"
+                                                        aria-hidden="true"></i><span>Casts</span></li>
+                                                <li><i class="fa fa-caret-right"
+                                                        aria-hidden="true"></i><span>Crystals</span></li>
+                                                <li><i class="fa fa-caret-right" aria-hidden="true"></i><span>Others
+                                                        (Optional)</span></li>
                                             </ul>
                                         </li>
                                     </ul>
-                                    <p>Early diagnosis through this comprehensive diabetic profile test enables timely intervention, facilitating necessary diet and lifestyle changes. Experienced physicians can recommend suitable medications based on the test results, ensuring effective management of the condition. Parvathy Homecare offers a complete diabetic health checkup with these essential tests at reasonable rates. Results are delivered within Eight hours, allowing prompt initiation of treatment. Follow fasting instructions carefully for accurate blood glucose results, and trust Parvathy Homecare for medically sound advice on diabetic testing to prevent complications.</p>
+                                    <p>Early diagnosis through this comprehensive diabetic profile test enables timely
+                                        intervention, facilitating necessary diet and lifestyle changes. Experienced
+                                        physicians can recommend suitable medications based on the test results,
+                                        ensuring effective management of the condition. Parvathy Homecare offers a
+                                        complete diabetic health checkup with these essential tests at reasonable rates.
+                                        Results are delivered within Eight hours, allowing prompt initiation of
+                                        treatment. Follow fasting instructions carefully for accurate blood glucose
+                                        results, and trust Parvathy Homecare for medically sound advice on diabetic
+                                        testing to prevent complications.</p>
                                     <button (click)="readless()" class="btn-less" type="button">Read Less</button>
                                 </div>
                             </div>
@@ -123,12 +164,13 @@
                 <div class="div-top-booked" *ngIf="relatedProduct?.length">
                     <h2>Top Booked Tests</h2>
                     <div class="row">
-                        <div class="col-md-6"  *ngFor="let related of  relatedProduct;let i = index">
+                        <div class="col-md-6" *ngFor="let related of  relatedProduct;let i = index">
                             <div class="div-service-card">
                                 <h3>{{related?.name}}</h3>
                                 <div class="div-line"></div>
                                 <div class="div-offer-amt">
-                                    <p>MRP <span class="span-strike">₹1999</span> <span class="span-offer">25% off</span></p>
+                                    <p>MRP <span class="span-strike">₹1999</span> <span class="span-offer">25%
+                                            off</span></p>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -137,10 +179,11 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 text-right">
-                                        <button class="btn-add" (click)="addProduct(related)" type="button">{{ related.added ? 'Remove' : 'Add'}}</button>
+                                        <button class="btn-add" (click)="addProduct(related)" type="button">{{
+                                            related.added ? 'Remove' : 'Add'}}</button>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -154,7 +197,8 @@
                                     <span>{{ques?.question}}</span>
                                 </div>
                                 <div class="col-md-1">
-                                    <i class="fa fa-angle-down" (click)="openQuestionAnswer = i" [ngClass]="{'fa-rotate-180' : openQuestionAnswer === i}" aria-hidden="true"></i>
+                                    <i class="fa fa-angle-down" (click)="openQuestionAnswer = i"
+                                        [ngClass]="{'fa-rotate-180' : openQuestionAnswer === i}" aria-hidden="true"></i>
                                 </div>
                                 <div class="col-md-12" *ngIf="openQuestionAnswer === i">
                                     <p>{{ques?.answer}}</p>
@@ -169,5 +213,47 @@
             </div>
         </div>
     </div>
-</div>          
+</div>
 <div class="div-dummy" #divdummy></div>
+<div class="modal fade" id="exampleModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Buy Now</h5>
+                <button type="button" class="close" (click)="buyNowStep = 1" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="buyNowStep === 1">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Phone number</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1"
+                            placeholder="Enter Phone Number">
+                    </div>
+                    <button type="button" class="btn btn-primary">Send OTP</button>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Verify OTP</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter OTP">
+                        <button type="button" class="btn btn-primary">Verify</button>
+                    </div>
+                </div>
+                <div *ngIf="buyNowStep === 2">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Name</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Name">
+                        <label for="exampleInputPassword1">Email (optional)</label>
+                        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter email">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="buyNowStep = 1" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" *ngIf="buyNowStep === 1" (click)="nextStep()">Next</button>
+                <button type="button" class="btn btn-primary" *ngIf="buyNowStep === 2 && !buyNow" disabled>Buy Now</button>
+                <app-razorpay [detailsPage]="true" *ngIf="buyNowStep === 2 && buyNow" [productData]="productDetails"></app-razorpay>
+            </div>
+        </div>
+    </div>
+</div>

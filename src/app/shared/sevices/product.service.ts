@@ -34,4 +34,7 @@ export class ProductService {
   getUserDetails(): Observable<any> {
     return this.httpClient.get<any>(this.appurl + '/getUser/getUserDetails').pipe(map(response => response));
   }
+  sendOTP(number: any): Observable<any> {
+    return this.httpClient.post<any>(this.appurl + '/razorpay/sendOTP', number).pipe(map(response => response));
+  }
 }

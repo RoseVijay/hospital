@@ -21,7 +21,7 @@ import { ServicedetailComponent } from './servicedetail/servicedetail.component'
 import {ProductService} from './shared/sevices/product.service'
 import { AllservicesComponent } from './allservices/allservices.component';
 import { LoginComponent } from './login/login.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +49,8 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

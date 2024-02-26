@@ -23,6 +23,8 @@ export class ServicedetailComponent {
   openQuestionAnswer: any;
   tests: any = []
   relatedProduct: any = [];
+
+  phoneNumber:any = '';
   constructor(private productService: ProductService, private router: Router, private activatedRoute: ActivatedRoute) {
 
   }
@@ -103,5 +105,12 @@ export class ServicedetailComponent {
     } else {
       related.added = false;
     }
+  }
+  sendOTP(){
+    let phoneNumber = {
+      number : this.phoneNumber
+    }
+    this.productService.sendOTP(phoneNumber).subscribe((res) => {
+    })
   }
 }

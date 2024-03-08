@@ -1,12 +1,13 @@
 .div-about {
     width: 100%;
-    padding: 50px;
-    background-color: #f8f8f8;
+    // padding: 50px;
+    // background-color: #f8f8f8;
     h2 {
         color: #57267A;
         font-size: 36px;
         font-weight: 600;
-        margin-bottom: 30px;
+        // margin-bottom: 30px;
+        margin-bottom: 0px;
     }
     p {
         color: #3a3a3a;
@@ -50,8 +51,228 @@
             }
         }
     }
+
+    .div-banner {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        background-image: url(/assets/img/aboutus/banner1.png);
+        height:100vh;
+        .div-head-content {
+            text-align: left;            
+            div {
+                font-size: 11rem;
+                color:#E2225E;
+                font-weight: 700;
+                line-height: 100%;                
+                &.div-hos {
+                    color:#57267A;
+                    font-weight: 400;;
+                }
+            }
+        }
+    }
+
+    .div-sec-one {
+        width:100%;
+        padding: 5% 10% 3%;
+        .div-sec-one-banner {
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            width: 100%;
+            background-image: url(/assets/img/aboutus/welcomehands.png);
+            height:100%;
+        }
+        .div-hands {
+            background-color: #e5c3ff;
+            padding: 5% 10%;
+            div {
+                border-top: 2px solid #57267A;
+                width:100%;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .div-sec-two {
+        width:100%;
+        padding: 0% 10% 5%;
+        .div-sec-two-banner {
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            width: 100%;
+            background-image: url(/assets/img/aboutus/nurseconsult.png);
+            height:100%;
+        }
+        .div-nurse {
+            background-color: #fdcddb;
+            padding: 5% 10%;
+            div {
+                border-top: 2px solid #57267A;
+                width:100%;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            h2 {
+                color:#E2225E;
+            }
+        }
+    }
+    .div-sec-three {
+        width:100%;
+        padding: 3% 15% 4%;
+        background-color: #ffedf1;
+        .div-sec-three-head {
+            color:#57267A;
+            font-size: 5rem;
+            font-weight: 600;
+        }
+        .div-circle {
+            text-align: center;
+            margin: auto;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px dotted #E2225E;
+            padding: 7px;
+            .div-inner-circle {
+                text-align: center;
+                margin: auto;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #57267A;
+                color:#fff;
+                font-size: 24px;
+                line-height: 1;
+                font-weight: 600;                
+                &.pink {
+                    background-color: #E2225E;
+                }
+
+            }
+        }
+    }
+    .div-vision {
+        padding: 3% 10%;
+        .div-vission-child {
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 600px;
+            width: 100%;
+            background-image: url(/assets/img/aboutus/arrow.png);
+            height:600px;
+            position: relative;
+            .div-our-visit {
+                .col-md-4 {
+                    border-right:1px solid #57267A;
+                    h2 {
+                        font-size: 50px;
+                        color:#57267A;
+                    }
+                }
+                .col-md-8 {
+                    font-size: 22px;
+                }
+            }
+            .div-mission {
+                position: absolute;
+                bottom: 20px;
+                .div-our-mission {
+                    .col-md-4 {
+                        border-left:1px solid #57267A;
+                        h2 {
+                            font-size: 50px;
+                            color:#E2225E;
+                        }
+                    }
+                    .col-md-8 {
+                        font-size: 22px;
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+
+    .div-core {
+        background-color: #e5c3ff;
+        padding: 5% 10%;
+        .div-core-head {
+            color:#57267A;
+            border-right: 2px solid #57267A;
+            text-align: right;
+            font-size: 60px;
+            font-weight: 600;
+        }
+        .div-core-content {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .div-core-items {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 500;
+            background-color: #57267A;
+            border-radius: 0px 40px;
+            padding: 20px;
+            text-align: center;
+            &.pink {
+                background-color: #E2225E;
+            }
+        }
+    }
+    .div-choose {
+        padding: 3% 10%;
+        color:#E2225E;
+        font-size: 32px;
+        font-weight: 600;
+    }
 }
 
 .mt-5 {
-    margin-top: 80px !important;
+    margin-top: 50px !important;
+}
+
+.ht100 {
+    height: 100%;
+}
+.col-md-45 {
+    -ms-flex: 0 0 45%;
+    flex: 0 0 45%;
+    max-width: 45%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    // padding-right: 15px;
+    // padding-left: 15px;
+}
+
+.col-md-55 {
+    -ms-flex: 0 0 55%;
+    flex: 0 0 55%;
+    max-width: 55%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    // padding-right: 15px;
+    // padding-left: 15px;
+}
+
+.col-md-20 {
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
 }

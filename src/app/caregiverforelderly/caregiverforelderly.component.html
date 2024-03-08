@@ -178,6 +178,31 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="div-line"></div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-3" *ngFor="let product of productList">
+                        <div class="div-new-item">
+                            <img src={{product.image}} />
+                            <div class="div-offer">-10%</div>
+                            <h3>{{product.name}}</h3>
+                            <p>Rs.{{product.price}}<span>Rs. 500.00</span></p>
+                            <div>
+                                <i class="fa fa-star active" aria-hidden="true"></i>
+                                <i class="fa fa-star active" aria-hidden="true"></i>
+                                <i class="fa fa-star active" aria-hidden="true"></i>
+                                <i class="fa fa-star active" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                            <button type="button" class="btn-cart" (click)="viewProduct(product)">VIEW</button>
+                            <app-razorpay [productData]="product"></app-razorpay>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
